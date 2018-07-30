@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SAVE_COMMENT, FETCH_COMMENTS } from 'actions/types';
+import { SAVE_COMMENT, FETCH_COMMENTS, AUTHENTICATE_USER } from 'actions/types';
 
 export function saveComment(comment) {
   return {
@@ -13,5 +13,12 @@ export function fetchComments() {
   return {
     type: FETCH_COMMENTS,
     payload: request
+  };
+}
+
+export function authenticateUser(isLoggedIn) {
+  return {
+    type: AUTHENTICATE_USER,
+    payload: isLoggedIn
   };
 }
